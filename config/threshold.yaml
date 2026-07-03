@@ -1,0 +1,18 @@
+# TTC threshold bands used by src/label_logic.py.
+# Kept out of code so they can be tuned without touching the logger scripts.
+#
+# Bands (all require front_obstacle_valid = true):
+#   TTC > cruising_min_s                              -> CRUISING
+#   warning_min_s < TTC <= cruising_min_s              -> WARNING
+#   potential_collision_min_s <= TTC <= warning_min_s  -> POTENTIAL_COLLISION
+#   TTC < potential_collision_min_s                    -> HARD_BRAKING
+#   TTC == inf                                         -> OBSTRUCT (overrides bands above)
+#   front_obstacle_valid = false                       -> INVALID (overrides everything)
+ttc_bands:
+  cruising_min_s: 4.0
+  warning_min_s: 2.0
+  potential_collision_min_s: 1.5
+
+# potential_collision flips to Y when TTC <= this value.
+# Set to match the POTENTIAL_COLLISION + HARD_BRAKING bands above.
+potential_collision_cutoff_s: 2.0

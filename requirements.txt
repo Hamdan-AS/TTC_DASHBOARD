@@ -1,0 +1,10 @@
+# --- dashboard/app.py: plain pip install, no ROS2 needed ---
+streamlit
+pandas
+pillow
+pyyaml
+
+# --- src/extract_from_bag.py and src/live_logger_node.py ---
+# These need a ROS2 install (rclpy, rosbag2_py) and cv_bridge, which
+# come from your ROS2 distro / workspace, not pip. Install via pip only:
+opencv-python

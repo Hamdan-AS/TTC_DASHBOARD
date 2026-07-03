@@ -1,0 +1,11 @@
+# Locked COCO classes for the ttc_v2_label_node's YOLO26 detector.
+# Keys are display names, values are standard COCO class indices --
+# these are the indices Ultralytics YOLO models use out of the box,
+# no remapping needed against the model's raw output.
+locked_classes:
+  person: 0
+  bicycle: 1
+  car: 2
+  motorcycle: 3
+  bus: 5
+  truck: 7
